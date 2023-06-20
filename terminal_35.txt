@@ -1,0 +1,130 @@
+1) Посмотреть где я:
+pwd - /d/Ivan_QA/git_35
+
+2) Создать папку:
+mkdir f_1
+
+3) Зайти в папку:
+cd f_1
+
+4) Создать 3 папки:
+mkdir f_2 f_3 f_4
+
+5) Зайти в любоую папку:
+cd f_2
+
+6) Создать 5 файлов (3 txt, 2 json):
+touch 1.txt 2.txt 3.txt 1.json 2.json
+
+7) Создать 3 папки:
+mkdir f_5 f_6 f_7
+
+8) Вывести список содержимого папки:
+ls -la
+total 4
+drwxr-xr-x 1 User 197121 0 Jun 16 21:10 ./
+drwxr-xr-x 1 User 197121 0 Jun 16 21:06 ../
+-rw-r--r-- 1 User 197121 0 Jun 16 21:08 1.json
+-rw-r--r-- 1 User 197121 0 Jun 16 21:08 1.txt
+-rw-r--r-- 1 User 197121 0 Jun 16 21:08 2.json
+-rw-r--r-- 1 User 197121 0 Jun 16 21:08 2.txt
+-rw-r--r-- 1 User 197121 0 Jun 16 21:08 3.txt
+drwxr-xr-x 1 User 197121 0 Jun 16 21:10 f_5/
+drwxr-xr-x 1 User 197121 0 Jun 16 21:10 f_6/
+drwxr-xr-x 1 User 197121 0 Jun 16 21:10 f_7/
+
+9) Открыть любой txt файл:
+vim 1.txt
+
+10) Написать туда что-нибудь, любой текст:
+i - режим редактирования
+
+11) Cохранить и выйти:
+ESC - выйти из режима редактирования
+:wq - сохранить и выйти
+
+12) Выйти из папки на уровень выше:
+сd ..
+
+13) Переместить любые 2 файла, которые вы создали, в любую другую папку:
+mv 1.txt 1.json f_3 1.txt 1.json /d/Ivan_QA/git_35/f_1/f_3
+
+14) Cкопировать любые 2 файла, которые вы создали, в любую другую папку:
+cp 1.json 1.txt /d/Ivan_QA/git_35/f_1/f_2
+
+15) Найти файл по имени:
+find -name 1.json
+
+16) Просмотреть содержимое в реальном времени (команда grep) изучите как она работает:
+grep -r H
+1.txt:Hello world!
+
+17) Вывести несколько первых строк из текстового файла:
+head 2.txt
+11111
+22222
+33333
+44444
+55555
+66666
+77777
+88888
+99999
+00000
+
+18) Вывести несколько последних строк из текстового файла:
+tail 2.txt
+hhhhh
+jjjjj
+kkkkk
+lllll
+kkkkk
+lllll
+eeeee
+ttttt
+yyyyy
+
+19) Просмотреть содержимое длинного файла (команда less) изучите как она работает:
+less 2.txt
+
+20) Вывести дату и время:
+date
+Fri Jun 16 21:57:34 RTZ 2023
+
+Задание *
+1) Отправить http запрос на сервер
+http://162.55.220.72:5006/terminal-hw-request:
+curl "http://162.55.220.72:5006/terminal-hw-request"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   283  100   283    0     0    686      0 --:--:-- --:--:-- --:--:--   688{
+  "Intro": "Hello!! This is your the first response from server",
+  "Tasks": {
+    "Task_1": "Send the next URL in terminal: http://162.55.220.72:5005/get_method?name=(set_your_String)&age=(set_your_number)",
+    "result": [
+      "Your_String",
+      "Your_number"
+    ]
+  }
+}
+
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13:
+nano script.sh
+
+#!/bin/bash
+
+cd f_1
+mkdir f_2 f_3 f_4
+cd f_2
+touch 1.txt 2.txt 3.txt 1.json 2.json
+mkdir f_5 f_6 f_7
+ls -la
+mv 1.txt 1.json f_3 1.txt 1.json /d/Ivan_QA/git_35/f_1/f_3
+
+ctrl + x - сохранить
+bash script.sh - запустить скрипт
+
+
+
+
